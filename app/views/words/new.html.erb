@@ -1,0 +1,27 @@
+  <%= form_for @word, url: root_path, html: {method: :post} do |f|%> <!-- or post -->
+    <div class="field">
+      <div class="field_item expression-box">
+        <%= f.label :sentence, "expression" %><br>
+        <%= f.text_field :sentence %><br>
+      </div>
+
+      <div class="field_item description-box">
+        <%= f.label :description, "description" %><br>
+        <%= f.text_area :description %><br>
+      </div>
+
+      <div class="field_item level-box">
+        <%= f.label :Level %><br>
+        <%= select :word, :level, options_for_select([['1'], ['2'],['3'], ['4'],['5']],1) %><br>
+      </div>
+
+      <div class="field_item category-box">
+        <%= f.label :category %><br>
+        <%= select :word, :category, options_for_select([['Sexual', 'sexual'], ['Body Parts', 'bodyParts'],['Offensive', 'offensive'], ['Fuck', 'fuck'],['Shit', 'shit'],['Others', 'others']]) %><br>
+      </div>
+
+    </div>
+    <div class="actions">
+      <%= f.submit "Create" %>
+    </div>
+  <% end %>

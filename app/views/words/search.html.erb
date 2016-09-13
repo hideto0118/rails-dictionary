@@ -1,0 +1,21 @@
+<h2>Search Result</h2>
+
+<% if (@words.empty?) %>
+  <p>No Results. Try again!</p>
+<% end %>
+
+<% @words.each do |w| %>
+  <div class="item">
+    <h3><%= w.sentence %></h3>
+    <p><%= w.description %></p>
+    <p class="level">Level: </p>
+    <% w.level.times do |i| %>
+    <i class="fa fa-star" aria-hidden="true"></i>
+    <% end %>
+    <% if w.category == 'bodyParts' %>
+      <p>Category: body parts</p>
+    <% else %>
+      <p>Category: <%= w.category %></p>
+    <% end %>
+  </div>
+<% end %>
