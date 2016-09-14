@@ -71,7 +71,7 @@ header{
       background-color: $black;
       color: #fff;
       &:focus{
-        border-color: #fff;
+        border: #fff;
       }
     }
     .search-btn{
@@ -193,7 +193,7 @@ header{
     color: $black;
     background-color: $yellow;
     &:hover{
-      background-color: $orange;
+      background-color: #fff;
     }
   }
 }
