@@ -7,9 +7,9 @@ class WordsController < ApplicationController
   def category
       @category = params[:categoryName]
     if (params[:categoryName] == 'all')
-      @words = Word.all
+      @words = Word.all.order('created_at DESC')
     else
-      @words = Word.where(category: params[:categoryName])
+      @words = Word.where(category: params[:categoryName]).order('created_at DESC')
     end
   end
 
