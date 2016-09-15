@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_action :require_user, only: [:new, :create]
 
   def home
   end

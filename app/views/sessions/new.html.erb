@@ -1,0 +1,14 @@
+<h2>Log in</h2>
+<p>Please login to add expressions.</p>
+<div class="login_form">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.email_field :email, :placeholder => "Email" %><br/>
+    <%= f.password_field :password, :placeholder => "Password" %><br/>
+    <div class="login_form_submit">
+      <%= f.submit "Log in", class: "btn-submit" %>
+    </div>
+  <% end %>
+  <div class="jump-to-signup">
+    <%= link_to "No account? Signup here.", 'signup' %>
+  </div>
+</div>

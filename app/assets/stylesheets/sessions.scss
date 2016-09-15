@@ -1,0 +1,33 @@
+/*miixins, variables*/
+$black: #161616;
+$yellow: #c0a062;
+$orange : #ff8000;
+
+/*new*/
+.login_form{
+  input{
+    border: 1px solid #fff;
+    border-radius: 3PX;
+    padding: 10px;
+    height: 20px;
+    width: 300px;
+    margin: 20px;
+    &:nth-last-child(1){
+      margin-bottom: 10px;
+    }
+  }
+  .btn-submit{
+    height: auto;
+    border:1px solid $yellow;
+    color: $yellow;
+    background-color: $black;
+    &:hover{
+      border:1px solid #fff;
+      color: #fff;
+    }
+  }
+}
+
+.jump-to-signup a{
+  color: #b5171c;
+}

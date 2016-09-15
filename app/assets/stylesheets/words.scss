@@ -31,6 +31,11 @@ a:hover{
   color: #fff;
 }
 
+li{
+  list-style-type: none;
+}
+
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -50,6 +55,28 @@ header{
   height: 200px;
   h1{
     margin-bottom: 0;
+  }
+  .authentication{
+    position: absolute;
+    top: 120px;
+    left: 25px;
+    ul{
+      margin: 0px;
+      padding: 0px
+    }
+    li{
+      display: inline-block;
+    }
+    .header_auth-btn{
+      display: inline-block;
+      border: 1px solid $yellow;
+      padding: 8px;
+      margin: 3px;
+      width: 80px;
+      &:hover{
+        border: 1px solid #fff;
+      }
+    }
   }
   .add-expression{
     position: absolute;

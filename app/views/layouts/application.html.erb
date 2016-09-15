@@ -16,6 +16,21 @@
     <%= text_field_tag :search, params[:search], placeholder: "Search Words", class: "search-box" %>
     <%= submit_tag "Search", class: "search-btn" %>
     <% end %>
+
+    <div class="authentication">
+      <% if current_user %>
+        <ul>
+          <li><%= current_user.email %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete", class: "header_auth-btn" %></li>
+        </ul>
+      <% else %>
+      <ul>
+        <li><%= link_to "Login", 'login', class: "header_auth-btn" %></li>
+        <li><%= link_to "Signup", 'signup', class: "header_auth-btn" %></li>
+      </ul>
+      <% end %>
+    </div>
+
   </header>
 
     <div class="container">
