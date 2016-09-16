@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/' => 'words#create'
   get '/search' => 'words#search'
   get 'signup' => 'users#new'
+  delete '/category/:id' => 'words#destroy', as: :delete_word
+
   resources :users
 
   get '/login' => 'sessions#new'

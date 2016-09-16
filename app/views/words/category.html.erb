@@ -9,7 +9,7 @@
   <% end %>
 
 <% @words.each do |w| %>
-  <div class="item">
+  <div class="item cf">
     <h3><%= w.sentence %></h3>
     <p><%= w.description %></p>
     <p class="level">Level: </p>
@@ -21,5 +21,12 @@
     <% else %>
       <p>Category: <%= w.category %></p>
     <% end %>
+
+    <% if current_user && current_user.admin? %>
+      <div class="delete-item">
+        <%= link_to "Delete", delete_word_path(w.id), method: "delete" %>
+      </div>
+    <% end %>
+
   </div>
 <% end %>
