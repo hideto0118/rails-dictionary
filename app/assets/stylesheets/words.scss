@@ -184,10 +184,10 @@ header{
   }
 }
 
-.delete-item{
+.delete-item, .edit-item{
   border: 1px solid $yellow;
   display: inline-block;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
   padding: 8px;
   float: right;
 }

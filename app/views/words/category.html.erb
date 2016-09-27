@@ -28,5 +28,11 @@
       </div>
     <% end %>
 
+    <% if current_user && current_user.admin? %>
+      <div class="edit-item">
+        <%= link_to "Edit", edit_path(w.id), method: "get" %>
+      </div>
+    <% end %>
+
   </div>
 <% end %>

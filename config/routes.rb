@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/search' => 'words#search'
   get 'signup' => 'users#new'
   delete '/category/:id' => 'words#destroy', as: :delete_word
+  get '/edit/:id' => 'words#edit', as: :edit
+  patch '/edit/:id' => 'words#update', as: :update
 
   resources :users
 

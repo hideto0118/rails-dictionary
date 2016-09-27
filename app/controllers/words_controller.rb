@@ -7,9 +7,9 @@ class WordsController < ApplicationController
   def category
       @category = params[:categoryName]
     if (params[:categoryName] == 'all')
-      @words = Word.all.order('created_at DESC')
+      @words = Word.all.order("updated_at DESC")
     else
-      @words = Word.where(category: params[:categoryName]).order('created_at DESC')
+      @words = Word.where(category: params[:categoryName]).order("updated_at DESC")
     end
   end
 
@@ -22,8 +22,10 @@ class WordsController < ApplicationController
     Word.new(word_params)
     category = @word['category']
       if @word.save
+        flash[:notice] = "You added a new word!"
         redirect_to '/category/' + category
       else
+        flash[:alert] = "Sorry. Adding a word failed!"
         render 'new'
       end
   end
@@ -31,16 +33,31 @@ class WordsController < ApplicationController
   def search
         @words = Word.all
     if params[:search]
-      @words = Word.search(params[:search]).order("created_at DESC")
+      @words = Word.search(params[:search]).order("updated_at DESC")
     else
-      @words = Word.all.order('created_at DESC')
+      @words = Word.all.order("updated_at DESC")
     end
   end
 
   def destroy
     @word = Word.find(params[:id])
     @word.destroy
-    redirect_to root_url
+    flash[:notice] = "Deleted a Word Successfully!"
+    redirect_to '/category/' + @word.category
+  end
+
+  def edit
+    @word = Word.find(params[:id])
+  end
+
+  def update
+    @word = Word.find(params[:id])
+    if @word.update_attributes(word_params)
+      flash[:success] = "Word updated"
+      redirect_to '/category/' + @word.category
+    else
+      render 'edit'
+    end
   end
 
 

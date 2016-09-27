@@ -8,8 +8,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
+        flash[:notice] = "Registered Successfully!"
         redirect_to '/'
       else
+        flash[:alert] = "Register Failed!"
         redirect_to 'signup'
       end
     end

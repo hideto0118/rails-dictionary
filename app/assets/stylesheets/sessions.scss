@@ -2,6 +2,7 @@
 $black: #161616;
 $yellow: #c0a062;
 $orange : #ff8000;
+$red: #b5171c;
 
 /*new*/
 .login_form{
@@ -29,5 +30,9 @@ $orange : #ff8000;
 }
 
 .jump-to-signup a{
-  color: #b5171c;
+  color: $red;
+}
+
+.notice, .alert{
+  color: $red;
 }
